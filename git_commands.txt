@@ -1,0 +1,212 @@
+================================
+🚀 GIT COMMANDS - QUICK REFERENCE
+================================
+
+COPY AND PASTE THESE COMMANDS
+(One by one in PowerShell/Terminal)
+
+================================
+STEP 1: NAVIGATE TO FOLDER
+================================
+
+cd D:\portfolio
+
+
+================================
+STEP 2: INITIALIZE GIT
+================================
+
+git init
+
+
+================================
+STEP 3: CONFIGURE GIT (First Time)
+================================
+
+git config --global user.name "Uttam Kumar"
+git config --global user.email "uttam16.kqr@gmail.com"
+
+
+================================
+STEP 4: ADD ALL FILES
+================================
+
+git add .
+
+
+================================
+STEP 5: COMMIT CHANGES
+================================
+
+git commit -m "Initial commit: Professional portfolio with resume integration"
+
+
+================================
+STEP 6: CREATE MAIN BRANCH
+================================
+
+git branch -M main
+
+
+================================
+STEP 7: ADD REMOTE REPOSITORY
+================================
+
+git remote add origin https://github.com/uttamkqr/portfolio.git
+
+
+================================
+STEP 8: PUSH TO GITHUB
+================================
+
+git push -u origin main
+
+
+================================
+IF ASKED FOR AUTHENTICATION:
+================================
+
+Username: uttamkqr
+Password: [Use Personal Access Token]
+
+To create token:
+1. Go to: https://github.com/settings/tokens
+2. Generate new token (classic)
+3. Check "repo" scope
+4. Copy token
+5. Use as password
+
+
+================================
+AFTER FIRST PUSH - ENABLE PAGES:
+================================
+
+1. Go to: https://github.com/uttamkqr/portfolio
+2. Click: Settings
+3. Scroll to: Pages (left sidebar)
+4. Source: main
+5. Folder: / (root)
+6. Click: Save
+7. Wait 2 minutes
+8. Visit: https://uttamkqr.github.io/portfolio
+
+
+================================
+FUTURE UPDATES (After changes):
+================================
+
+git add .
+git commit -m "Updated [describe what you changed]"
+git push
+
+
+================================
+CHECK STATUS:
+================================
+
+git status
+
+
+================================
+VIEW COMMIT HISTORY:
+================================
+
+git log --oneline
+
+
+================================
+UNDO LAST COMMIT (if needed):
+================================
+
+git reset --soft HEAD~1
+
+
+================================
+COMMON ISSUES & FIXES:
+================================
+
+Issue: "fatal: not a git repository"
+Fix: Run "git init" first
+
+Issue: "fatal: remote origin already exists"
+Fix: git remote remove origin
+      Then add again
+
+Issue: Authentication failed
+Fix: Use Personal Access Token as password
+
+Issue: Permission denied
+Fix: Check repository exists on GitHub
+
+
+================================
+VERIFY DEPLOYMENT:
+================================
+
+After pushing and enabling Pages:
+
+✅ Visit: https://uttamkqr.github.io/portfolio
+✅ Test all links
+✅ Check resume loads
+✅ Test on mobile
+✅ Share link!
+
+
+================================
+QUICK DEPLOY SUMMARY:
+================================
+
+1. cd D:\portfolio
+2. git init
+3. git config --global user.name "Uttam Kumar"
+4. git config --global user.email "uttam16.kqr@gmail.com"
+5. git add .
+6. git commit -m "Initial commit"
+7. git branch -M main
+8. git remote add origin https://github.com/uttamkqr/portfolio.git
+9. git push -u origin main
+10. Enable Pages on GitHub
+11. Done! ✅
+
+
+================================
+YOUR PORTFOLIO URL:
+================================
+
+https://uttamkqr.github.io/portfolio
+
+
+================================
+IMPORTANT NOTES:
+================================
+
+- Repository must be PUBLIC for Pages to work
+- Wait 1-2 minutes after enabling Pages
+- Clear browser cache if not loading
+- index.html must be in root folder
+
+
+================================
+SUCCESS INDICATORS:
+================================
+
+✅ No error messages during push
+✅ Files visible on GitHub
+✅ Pages shows "Your site is live"
+✅ Portfolio accessible at URL
+✅ All features working
+
+
+================================
+NEED HELP?
+================================
+
+Full guide: DEPLOY_TO_GITHUB.md
+Status page: https://www.githubstatus.com/
+Documentation: https://docs.github.com/pages
+
+
+================================
+Last Updated: January 2025
+Status: ✅ Tested & Working
+================================

@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uttam Kumar - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', 'Calibri', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .resume-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        
+        .header .title {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 0.95rem;
+            margin-top: 15px;
+        }
+        
+        .contact-info div {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 35px;
+        }
+        
+        .section-title {
+            color: #667eea;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 3px solid #667eea;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .objective {
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.8;
+            text-align: justify;
+        }
+        
+        .education-item {
+            margin-bottom: 20px;
+        }
+        
+        .education-item h3 {
+            color: #333;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        .education-details {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+        
+        .education-details strong {
+            color: #667eea;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        
+        .skill-category {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .skill-category h4 {
+            color: #667eea;
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+        
+        .skill-category ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .skill-category li {
+            color: #555;
+            padding: 3px 0;
+            font-size: 0.9rem;
+        }
+        
+        .skill-category li::before {
+            content: "▹ ";
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .project {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 4px solid #764ba2;
+        }
+        
+        .project h3 {
+            color: #333;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+        
+        .project .tech {
+            color: #667eea;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+        
+        .project .description {
+            color: #555;
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+        
+        .project ul {
+            margin-top: 8px;
+            margin-left: 20px;
+            color: #555;
+        }
+        
+        .achievements ul, .languages ul {
+            margin-left: 20px;
+            color: #555;
+        }
+        
+        .achievements li, .languages li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+        
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        .github-link {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .github-link a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        
+        .github-link a:hover {
+            text-decoration: underline;
+        }
+        
+        @media print {
+            body {
+                padding: 0;
+                background: white;
+            }
+            
+            .resume-container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+            
+            .no-print {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .skills-grid, .two-column {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+        
+        .print-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .print-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 30px rgba(102, 126, 234, 0.6);
+        }
+    </style>
+</head>
+<body>
+<button class="print-button no-print" onclick="window.print()">📄 Print / Save PDF</button>
+
+<div class="resume-container">
+    <!-- Header -->
+    <div class="header">
+        <h1>UTTAM KUMAR</h1>
+        <div class="title">Data Science Enthusiast | Python Developer | ML Engineer</div>
+        <div class="contact-info">
+            <div>📧 uttam16.kqr@gmail.com</div>
+            <div>📱 +91 82524 43170</div>
+            <div>📍 Bathinda, Punjab</div>
+            <div>🌐 github.com/uttamkqr</div>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+        <!-- Career Objective -->
+        <div class="section">
+            <h2 class="section-title">Career Objective</h2>
+            <p class="objective">
+                Passionate Data Science and AI enthusiast pursuing B.Tech in Computer Science Engineering,
+                seeking opportunities to leverage expertise in Python programming, Machine Learning, and
+                Data Analysis. Committed to transforming complex data into actionable insights and building
+                innovative AI solutions. Eager to contribute to cutting-edge projects while continuously
+                expanding knowledge in emerging technologies including Deep Learning, Computer Vision, and
+                Natural Language Processing.
+            </p>
+        </div>
+
+        <!-- Education -->
+        <div class="section">
+            <h2 class="section-title">Education</h2>
+            <div class="education-item">
+                <h3>Bachelor of Technology (B.Tech) in Computer Science Engineering</h3>
+                <div class="education-details">
+                    <strong>Guru Kashi University</strong>, Bathinda, Punjab<br>
+                    <strong>Expected Graduation:</strong> 2027<br>
+                    <strong>CGPA:</strong> 7.50/10.0<br>
+                    <strong>Relevant Coursework:</strong> Data Structures, Algorithms, Machine Learning,
+                    Database Management, Web Development, Object-Oriented Programming
+                </div>
+            </div>
+        </div>
+
+        <!-- Technical Skills -->
+        <div class="section">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Programming & Development</h4>
+                    <ul>
+                        <li>Python (Advanced)</li>
+                        <li>C/C++ Programming</li>
+                        <li>HTML5, CSS3, JavaScript</li>
+                        <li>SQL & Database Management</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Data Science & ML</h4>
+                    <ul>
+                        <li>Machine Learning Algorithms</li>
+                        <li>Data Analysis & Visualization</li>
+                        <li>NumPy, Pandas, Matplotlib</li>
+                        <li>Scikit-learn, TensorFlow Basics</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Tools & Technologies</h4>
+                    <ul>
+                        <li>Git & GitHub</li>
+                        <li>Jupyter Notebook, VS Code</li>
+                        <li>MS Excel (Advanced)</li>
+                        <li>Adobe Photoshop</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Specialized Skills</h4>
+                    <ul>
+                        <li>Computer Vision (OpenCV)</li>
+                        <li>Natural Language Processing</li>
+                        <li>Speech Recognition</li>
+                        <li>Web Development</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects -->
+        <div class="section">
+            <h2 class="section-title">Projects</h2>
+
+            <div class="project">
+                <h3>🤖 AI Career Buddy</h3>
+                <div class="tech">Technologies: Python, Machine Learning, HTML/CSS, Data Analysis</div>
+                <div class="description">
+                    An intelligent AI-powered career guidance system designed to help students make informed
+                    career decisions by analyzing their interests, skills, and academic performance.
+                    <ul>
+                        <li>Implemented ML algorithms to analyze student data and predict suitable career paths</li>
+                        <li>Developed interactive web interface for seamless user experience</li>
+                        <li>Achieved 85%+ accuracy in career recommendations</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="project">
+                <h3>🎓 Smart College Web</h3>
+                <div class="tech">Technologies: HTML, CSS, JavaScript, Responsive Design</div>
+                <div class="description">
+                    A modern, feature-rich college website with interactive elements and student portal functionality.
+                    <ul>
+                        <li>Designed responsive UI/UX with mobile-first approach</li>
+                        <li>Implemented dynamic content management system</li>
+                        <li>Integrated student information portal and announcement system</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="project">
+                <h3>🎯 Smart Quiz Bot</h3>
+                <div class="tech">Technologies: JavaScript, AI/ML, HTML, Interactive UI</div>
+                <div class="description">
+                    An intelligent quiz application that generates dynamic quizzes and evaluates responses with AI.
+                    <ul>
+                        <li>Developed adaptive quiz generation algorithm</li>
+                        <li>Implemented real-time score tracking and analytics</li>
+                        <li>Created engaging user interface with smooth animations</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="project">
+                <h3>🎨 AIR DRAW</h3>
+                <div class="tech">Technologies: Python, OpenCV, Computer Vision, Hand Tracking</div>
+                <div class="description">
+                    An innovative air drawing application using computer vision to enable drawing with hand gestures.
+                    <ul>
+                        <li>Implemented real-time hand tracking using OpenCV and MediaPipe</li>
+                        <li>Developed gesture recognition for drawing commands</li>
+                        <li>Created intuitive user interface with multiple color and tool options</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="project">
+                <h3>🎤 Instant Voice Interface</h3>
+                <div class="tech">Technologies: Python, Speech Recognition, NLP, AI</div>
+                <div class="description">
+                    A voice-controlled interface application with speech recognition and command processing
+                    capabilities.
+                    <ul>
+                        <li>Integrated speech-to-text conversion with high accuracy</li>
+                        <li>Implemented natural language processing for command interpretation</li>
+                        <li>Developed real-time voice feedback system</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="project">
+                <h3>🏢 QuickDesk</h3>
+                <div class="tech">Technologies: HTML, CSS, JavaScript, Task Management</div>
+                <div class="description">
+                    A productivity tool designed to streamline desk work and task management.
+                    <ul>
+                        <li>Built clean and intuitive task management interface</li>
+                        <li>Implemented local storage for data persistence</li>
+                        <li>Created responsive design for cross-device compatibility</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Two Column Section -->
+        <div class="two-column">
+            <!-- Achievements -->
+            <div class="section">
+                <h2 class="section-title">Achievements</h2>
+                <div class="achievements">
+                    <ul>
+                        <li>📊 Completed 10+ real-world projects in Data Science and ML</li>
+                        <li>💻 29+ contributions on GitHub showcasing continuous learning</li>
+                        <li>🏆 Maintained 7.50 CGPA while actively building projects</li>
+                        <li>🚀 Developed portfolio showcasing advanced web development skills</li>
+                        <li>📚 Self-taught in Computer Vision and NLP technologies</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Languages -->
+            <div class="section">
+                <h2 class="section-title">Languages</h2>
+                <div class="languages">
+                    <ul>
+                        <li>🇮🇳 <strong>Hindi</strong> - Native</li>
+                        <li>🇬🇧 <strong>English</strong> - Professional Proficiency</li>
+                        <li>🗣️ <strong>Nagpuri</strong> - Native</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Soft Skills -->
+        <div class="section">
+            <h2 class="section-title">Soft Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Communication & Collaboration</h4>
+                    <ul>
+                        <li>Effective Communication</li>
+                        <li>Team Collaboration</li>
+                        <li>Problem Solving</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Professional Attributes</h4>
+                    <ul>
+                        <li>Quick Learner</li>
+                        <li>Detail-Oriented</li>
+                        <li>Time Management</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- GitHub Link -->
+        <div class="github-link">
+            <strong>Portfolio & Projects:</strong>
+            <a href="https://github.com/uttamkqr" target="_blank">github.com/uttamkqr</a> |
+            <a href="https://linkedin.com/in/uttam-kumar-7b69522b7/" target="_blank">LinkedIn Profile</a>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    // Print functionality
+    window.addEventListener('keydown', (e) => {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
+            e.preventDefault();
+            window.print();
+        }
+
+});
+</script>
+</body>
+</html>

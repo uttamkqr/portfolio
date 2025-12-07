@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Resume PDF - Uttam Kumar</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 2rem;
+        }
+        
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+        
+        .step {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .step h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .step p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        
+        .step ol {
+            margin-left: 20px;
+            color: #555;
+            line-height: 1.8;
+        }
+        
+        .step code {
+            background: #e9ecef;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #667eea;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        .btn {
+            flex: 1;
+            min-width: 200px;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+        }
+        
+        .btn-secondary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.6);
+        }
+        
+        .alert {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            color: #856404;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .alert strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .icon {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="icon">📄</div>
+    <h1>Download Resume</h1>
+    <p class="subtitle">Choose your method to download Uttam Kumar's resume</p>
+
+    <div class="alert">
+        <strong>⚠️ Note:</strong>
+        Since we're using a simple HTML site, you'll need to save the resume manually.
+        Follow the steps below for your preferred format.
+    </div>
+
+    <!-- PDF Method -->
+    <div class="step">
+        <h3>📕 Method 1: Save as PDF (Recommended)</h3>
+        <p><strong>This is the easiest and most professional method!</strong></p>
+        <ol>
+            <li>Click "Open Resume" button below</li>
+            <li>Resume will open in a new tab</li>
+            <li>Press <code>Ctrl + P</code> (Windows) or <code>Cmd + P</code> (Mac)</li>
+            <li>In "Destination", select <strong>"Save as PDF"</strong></li>
+            <li>Make sure "Background graphics" is <strong>ON</strong></li>
+            <li>Click "Save" and name it <code>Uttam_Kumar_Resume.pdf</code></li>
+        </ol>
+    </div>
+
+    <!-- Word Method -->
+    <div class="step">
+        <h3>📘 Method 2: Create Word Document</h3>
+        <p><strong>For editable version:</strong></p>
+        <ol>
+            <li>First, save as PDF using Method 1</li>
+            <li>Open the PDF in Microsoft Word</li>
+            <li>Word will convert it automatically</li>
+            <li>Or use an online PDF to Word converter:
+                <ul style="margin-top: 10px;">
+                    <li><a href="https://www.adobe.com/acrobat/online/pdf-to-word.html" target="_blank">Adobe PDF to
+                        Word</a></li>
+                    <li><a href="https://www.ilovepdf.com/pdf_to_word" target="_blank">iLovePDF</a></li>
+                </ul>
+            </li>
+            <li>Save as <code>Uttam_Kumar_Resume.docx</code></li>
+        </ol>
+    </div>
+
+    <!-- Google Docs Method -->
+    <div class="step">
+        <h3>📗 Method 3: Using Google Docs</h3>
+        <p><strong>Alternative method:</strong></p>
+        <ol>
+            <li>Open resume in new tab (click button below)</li>
+            <li>Press <code>Ctrl + A</code> to select all</li>
+            <li>Press <code>Ctrl + C</code> to copy</li>
+            <li>Open Google Docs</li>
+            <li>Paste content and format as needed</li>
+            <li>Download as PDF or Word from Google Docs</li>
+        </ol>
+    </div>
+
+    <div class="button-group">
+        <a href="resume.html" target="_blank" class="btn btn-primary">
+            <span>📄</span>
+            <span>Open Resume</span>
+        </a>
+        <a href="index.html" class="btn btn-secondary">
+            <span>🏠</span>
+            <span>Back to Portfolio</span>
+        </a>
+    </div>
+</div>
+
+<script>
+
+    // Show helpful message when resume link is clicked
+    document.querySelector('.btn-primary').addEventListener('click', function() {
+        setTimeout(() => {
+            alert('✅ Resume opened! Press Ctrl+P to save as PDF');
+        }, 500);
+
+});
+</script>
+</body>
+</html>

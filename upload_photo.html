@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Your Photo - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 2rem;
+        }
+        
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        .upload-area {
+            border: 3px dashed #667eea;
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .upload-area:hover {
+            background: #f8f9ff;
+            border-color: #764ba2;
+        }
+        
+        .upload-area.dragover {
+            background: #f0f0ff;
+            border-color: #764ba2;
+        }
+        
+        .upload-icon {
+            font-size: 4rem;
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+        
+        input[type="file"] {
+            display: none;
+        }
+        
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .preview {
+            margin-top: 20px;
+            display: none;
+        }
+        
+        .preview img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #667eea;
+            margin: 20px auto;
+            display: block;
+        }
+        
+        .instructions {
+            background: #f8f9ff;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        
+        .instructions h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .instructions ol {
+            margin-left: 20px;
+            line-height: 1.8;
+        }
+        
+        .code-box {
+            background: #333;
+            color: #0f0;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+        }
+        
+        .success-msg {
+            background: #10b981;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>📸 Add Your Photo</h1>
+    <p class="subtitle">Upload your professional photo for the portfolio</p>
+
+    <div class="upload-area" id="uploadArea">
+        <div class="upload-icon">📁</div>
+        <h3>Click to upload or drag & drop</h3>
+        <p>JPG, PNG up to 5MB</p>
+        <input type="file" id="fileInput" accept="image/*">
+    </div>
+
+    <div class="preview" id="preview">
+        <h3>Preview:</h3>
+        <img id="previewImg" src="" alt="Preview">
+    </div>
+
+    <div class="success-msg" id="successMsg">
+        ✅ Photo ready! Copy the code below and paste it in index.html
+    </div>
+
+    <div class="instructions">
+        <h3>📋 How to Use:</h3>
+        <ol>
+            <li>Click the upload area above or drag your photo</li>
+            <li>Wait for the image to load and preview</li>
+            <li>Save your photo as <strong>profile.jpg</strong> in the portfolio folder</li>
+            <li>Open <strong>index.html</strong> file</li>
+            <li>Find line 69-72 (search for "hero-image")</li>
+            <li>Replace the image tag with:</li>
+        </ol>
+
+        <div class="code-box" id="codeBox">
+            &lt;img src="profile.jpg" alt="Uttam Kumar"
+            style="width: 100%; height: 100%; object-fit: cover;"&gt;
+        </div>
+
+        <p style="margin-top: 15px; color: #666;">
+            <strong>Note:</strong> Make sure your photo is:
+            <br>• Square format (500x500 recommended)
+            <br>• Professional quality
+            <br>• Clear and well-lit
+        </p>
+    </div>
+</div>
+
+<script>
+
+    const uploadArea = document.getElementById('uploadArea');
+    const fileInput = document.getElementById('fileInput');
+    const preview = document.getElementById('preview');
+    const previewImg = document.getElementById('previewImg');
+    const successMsg = document.getElementById('successMsg');
+
+    // Click to upload
+    uploadArea.addEventListener('click', () => {
+        fileInput.click();
+    });
+
+    // File selected
+    fileInput.addEventListener('change', (e) => {
+        handleFile(e.target.files[0]);
+    });
+
+    // Drag and drop
+    uploadArea.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        uploadArea.classList.add('dragover');
+    });
+
+    uploadArea.addEventListener('dragleave', () => {
+        uploadArea.classList.remove('dragover');
+    });
+
+    uploadArea.addEventListener('drop', (e) => {
+        e.preventDefault();
+        uploadArea.classList.remove('dragover');
+        const file = e.dataTransfer.files[0];
+        handleFile(file);
+    });
+
+    function handleFile(file) {
+        if (!file || !file.type.startsWith('image/')) {
+            alert('Please select an image file!');
+            return;
+        }
+
+        if (file.size > 5 * 1024 * 1024) {
+            alert('File size should be less than 5MB!');
+            return;
+        }
+
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            previewImg.src = e.target.result;
+            preview.style.display = 'block';
+            successMsg.style.display = 'block';
+
+            // Scroll to preview
+            preview.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        };
+        reader.readAsDataURL(file);
+
+}
+</script>
+</body>
+</html>

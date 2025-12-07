@@ -1,0 +1,44 @@
+================================
+HOW TO ADD YOUR PHOTO - SIMPLE STEPS
+================================
+
+STEP 1: Save Your Photo
+------------------------
+- Save your photo as "profile.jpg" in the portfolio folder (D:\portfolio\)
+- Photo should be square (500x500 pixels is best)
+- File size should be under 500KB
+
+
+STEP 2: Update index.html
+--------------------------
+1. Open index.html file
+2. Find line 69-71 (search for "hero-image")
+3. Replace this code:
+
+    <div class="image-placeholder profile-photo">
+        <i class="fas fa-user-circle"></i>
+    </div>
+
+   With this:
+
+    <div class="image-placeholder profile-photo">
+        <img src="profile.jpg" alt="Uttam Kumar">
+    </div>
+
+4. Save the file
+5. Refresh your browser
+
+
+ALTERNATIVE: Use Online Image
+------------------------------
+If you want to use an online image:
+
+1. Upload your photo to: https://imgur.com/upload
+2. Right-click on uploaded image → Copy Image Address
+3. In index.html, use:
+
+    <img src="PASTE_IMAGE_URL_HERE" alt="Uttam Kumar">
+
+
+That's it! Your photo will appear in a circular frame with animation.
+================================

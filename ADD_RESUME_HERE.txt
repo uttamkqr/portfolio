@@ -1,0 +1,49 @@
+================================
+📄 HOW TO ADD YOUR RESUME
+================================
+
+QUICK STEPS:
+-----------
+
+1. Save your resume with these exact names:
+   - resume.pdf (for PDF version)
+   - resume.docx (for Word version)
+
+2. Place the file(s) in this portfolio folder:
+   D:\portfolio\
+
+3. That's it! The download button will work automatically.
+
+
+FILE NAMES (IMPORTANT):
+----------------------
+✅ resume.pdf    (Recommended)
+✅ resume.docx   (Optional)
+
+❌ Don't use: my-resume.pdf, CV.pdf, etc.
+
+
+TESTING:
+-------
+1. Open portfolio in browser
+2. Go to Contact section
+3. Click "Download Resume" button
+4. Select PDF or Word format
+5. Your resume should download!
+
+
+TIPS:
+-----
+- PDF format is recommended (most professional)
+- Keep file size under 2MB
+- Use a professional resume template
+- Update resume regularly
+
+
+CURRENT STATUS:
+--------------
+⚠️ Resume file not added yet
+📁 Location: D:\portfolio\
+📝 Required: resume.pdf
+
+================================
